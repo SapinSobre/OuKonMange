@@ -1,0 +1,205 @@
+﻿body{
+    background-color:lightslategray;
+}
+
+.container{
+    width:98%;
+    margin-left:1%;
+    margin-top:1.5%;
+}
+
+.blocHeader{
+    width:40%;
+    display:inline-block;
+}
+
+.logo{
+    float:left;
+    width:46%;
+} 
+
+.titre{
+    width:40%;
+    float:right;
+}
+
+.blocConnexionNav{
+    float:right;
+    width:50%;
+}
+
+.connexion{
+    float:right;
+    width:45%;
+    margin-top:20px;
+}
+
+.boutonConnexion{
+    float:left;
+    width:40%;
+    margin-left:12%;
+}
+
+.boutonCreerCompte{
+    float:right;
+    width:40%;
+    margin-right:5%;
+}
+
+.liensNav {
+    width: 140%;
+    margin-left: -20%;
+}
+
+.lienNav a {
+    background-color: #5a8463;
+    text-decoration: none;
+    padding: 10px;
+    color:antiquewhite;
+}
+
+.lienNav{
+    float:left;   
+    margin-left:2.5%;
+}
+
+.nav{
+    float:left;
+    margin-top:10%;
+    margin-left:35%;
+}
+
+.boutonConnexion a{
+    background-color: #927dbb;
+    text-decoration: none;
+    padding: 10px;
+    color:antiquewhite;
+}
+
+.deconnexion {
+    padding-left: 55%;  
+}
+
+.restosDeLaSemaine {
+    color: #4f224a;
+}
+
+.restoDeLaSemaine {
+    color: #6e2f52;
+}
+
+/*.main{
+    height:450px;
+}*/
+
+.section{
+    float:left;
+    width:30%;
+}
+
+.blocContent{
+    margin-top:2.5%;
+}
+
+.mainContent{
+    width:70%;
+    float:right;
+}
+
+.vignette{
+    float:left;
+    margin-right:2%;
+}
+
+.imageContent{
+    float:right;
+    margin-right:20%;
+    margin-top: -20%;
+}
+
+.nomResto p {
+    text-align: center;
+    color: #4f224a;
+    text-transform:uppercase;
+    font-weight:bold;
+}
+
+form{
+    width:30%;
+}
+
+form[action=\/Login\/CreerCompte], form[action="\/Login"]{
+    width:40%;
+}
+
+form[action=\/Restaurant\/CreerRestaurant]{
+    width:35%;
+}
+
+.formModifierRestaurant{
+    width:110%;
+}
+
+label {
+    float: left;
+    margin-left: 5%;
+}
+
+input{
+    float:right;
+    width:60%;
+    margin-right:5%;
+}
+
+input[type=submit]{
+    float:none;
+    width:auto;
+    margin-left:5%;
+}
+
+legend {
+    color:white;
+}
+
+.footer{
+    width:100%;
+    margin-top:30%;
+}
+
+.field-validation-error {
+    color: #f00;
+}
+
+.validation-summary-errors {
+    color: #f00;
+    font-weight: bold;
+}
+
+.input-validation-error {
+    border: 2px solid #f00;
+    background-color: #fee;
+}
+
+input[type="checkbox"].input-validation-error {
+    outline: 2px solid #f00;
+}
+
+table {
+    width:50%;   
+    border-collapse: collapse;
+    border-top:1px solid white;
+    border-bottom:1px solid white;    
+}
+
+th {
+    border: 1px solid white;   
+    padding : 5px;
+    color:white;
+}
+
+td {
+    border: 1px solid white;
+    border-top: hidden;  
+    padding:5px;
+    text-align:center;
+}
