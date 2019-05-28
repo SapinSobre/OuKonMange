@@ -1,0 +1,21 @@
+﻿@model OuKonMange3.Models.RestosImagesViewModel
+
+<div class="blocRestosImages">   
+    @foreach (var resto in Model.ListeRestos)
+    {                
+        <div class="vignette">
+            <div class="nomResto">
+                <p>@resto.Nom</p>
+            </div>
+            @foreach (var image in Model.ListeImages)
+            {
+                if (image.RestoId == resto.Id)
+                {
+                    <div class="imageResto">
+                        <img src="~/Content/@(image.Url).jpg" alt="@image.Url" />
+                    </div>
+                }
+            }
+        </div>               
+     }       
+</div>

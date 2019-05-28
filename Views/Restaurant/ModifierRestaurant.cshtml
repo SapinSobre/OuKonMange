@@ -1,0 +1,55 @@
+﻿@model OuKonMange3.Models.Resto
+@{
+    ViewBag.Title = "ModifierRestaurant";
+}
+@{
+    Layout = "~/Views/Shared/_LayoutOuKonMange3.cshtml";
+}
+
+@section styles{
+    <link type="text/css" rel="stylesheet" href="~/Content/styleOuKonMange3.css" />
+}
+
+@section bonjour{
+    <h3>@Model.Nom a changé de coordonnées?!</h3>
+}
+
+@using (Html.BeginForm())
+{
+    <fieldset class="formModifierRestaurant">
+        <legend>Modifier @Model.Nom</legend>
+        <br />
+        <div>
+            @Html.LabelFor(model => model.Nom)
+            @Html.TextBoxFor(model => model.Nom)
+            @Html.ValidationMessageFor(model => model.Nom)
+        </div>
+        <br /><br />
+        <div>
+            @Html.LabelFor(model => model.Telephone)
+            @Html.TextBoxFor(model => model.Telephone)
+            @Html.ValidationMessageFor(model => model.Telephone)
+        </div>
+        <br /><br />
+        <div>
+            @Html.LabelFor(model => model.Email)
+            @Html.TextBoxFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+        <br /><br />
+        <input type="submit" value="Modifier" />
+        <br /><br />
+    </fieldset>
+    <br />
+    @Html.ActionLink("Retour liste de restos", "Index", "Restaurant")
+
+}
+@section imageContent{
+    <img src="~/Content/imageModifierRestaurant.jpg" alt="imageModifierRestaurant" />
+}
+
+@section scripts{
+    <script type="text/javascript" src="../../Scripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery.validate-vsdoc.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery.validate.unobtrusive.js"></script>
+}

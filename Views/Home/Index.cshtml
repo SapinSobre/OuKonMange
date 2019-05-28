@@ -1,0 +1,30 @@
+﻿@model OuKonMange3.Models.UtilisateurViewModel
+@{
+    ViewBag.Title = "Home";
+}
+@{
+    Layout = "~/Views/Shared/_LayoutOuKonMange3.cshtml";
+}
+
+@section styles{
+    <link type="text/css" rel="stylesheet" href="~/Content/styleOuKonMange3.css" />
+}
+
+@section bonjour{
+    @if (Model.Authentifie)
+    {
+        <h3>Bonjour @Model.Utilisateur.Nom! Où voulez-vous aller manger vendredi?!</h3>
+    }
+    else
+    {
+        <h3>Bonjour! Vous devez vous connecter pour pouvoir choisir un restaurant.</h3>
+    }
+}
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <input type="submit" value="Voter" />
+}
+<br /><br />
+
+@Html.Action("AfficheRestosImages")

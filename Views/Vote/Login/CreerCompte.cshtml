@@ -1,0 +1,31 @@
+﻿@model OuKonMange3.Models.UtilisateurViewModel
+
+@section styles{
+    <link type="text/css" rel="stylesheet" href="~/Content/styleOuKonMange3.css" />
+}
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>Créer un compte</legend>
+        <br />
+        <div>
+            @Html.LabelFor(model => model.Utilisateur.Nom)
+            @Html.TextBoxFor(model => model.Utilisateur.Nom)
+            @Html.ValidationMessageFor(model => model.Utilisateur.Nom)
+        </div>
+        <br /><br />
+        <div>
+            @Html.LabelFor(model => model.Utilisateur.MotDePasse)
+            @Html.PasswordFor(model => model.Utilisateur.MotDePasse)
+            @Html.ValidationMessageFor(model => model.Utilisateur.MotDePasse)
+        </div>
+        <br /><br />
+        <input type="submit" value="Créer le compte" />
+        <br /><br />
+    </fieldset>
+}
+
+@section imageContent{
+    <img src="~/Content/imageCreerCompte.jpg" alt="imageCreerCompte" />
+}

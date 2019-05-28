@@ -1,0 +1,41 @@
+﻿@model OuKonMange3.Models.RechercheViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutOuKonMange3.cshtml";
+}
+@{
+    ViewBag.Title = "Recherche";
+}
+@section styles{
+    <link type="text/css" rel="stylesheet" href="~/Content/styleOuKonMange3.css" />
+}
+
+@using (Ajax.BeginForm("ResultatRecherche", new AjaxOptions
+{
+    HttpMethod = "GET",
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "resultatRecherche",
+    OnFailure = "ErreurRecherche()",
+    LoadingElementId = "chargement"
+}))
+{
+    @Html.LabelFor(model => model.Recherche)
+    @Html.TextBoxFor(model => model.Recherche)
+    @Html.ValidationMessageFor(model => model.Recherche)
+    <br /><br />
+    <img id="chargement" src="~/Content/ajax-loader.gif" alt="iconeChargement" style="display:none;" />
+    <input type="submit" value="Rechercher" />
+}
+<br /><br />
+<div id="resultatRecherche">
+    @{
+        Html.RenderAction("ResultatRecherche", new { viewmodel = Model });
+    }
+</div>
+<p>@DateTime.Now.ToLongTimeString()</p>
+
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script type="text/javascript" src="~/Scripts/erreurRecherche.js"></script>
+}

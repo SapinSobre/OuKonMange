@@ -1,0 +1,7 @@
+﻿@model List<OuKonMange3.Models.Resto>
+
+<h2 class="restosDeLaSemaine">Les restos de la semaine!!!</h2>
+@foreach (var resto in Model)
+{    
+    <h3 class="restoDeLaSemaine">@resto.Nom</h3>                
+}         

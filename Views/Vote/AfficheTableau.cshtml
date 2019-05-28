@@ -1,0 +1,18 @@
+﻿<table>
+    <tr>
+        <th>Nom</th>
+        <th>Téléphone</th>
+        <th>Nombre de votes</th>
+    </tr>
+    @foreach (var resultat in Model)
+    {
+        <tr>
+            <td>@resultat.Nom</td>
+            <td>@resultat.Telephone</td>
+            <td>@resultat.Score</td>
+        </tr>
+    }
+</table>
+
+<p>Vue partielle : @DateTime.Now.ToLongTimeString()</p>
+

@@ -1,0 +1,32 @@
+﻿@model List<OuKonMange3.Models.Resto>
+@{
+    ViewBag.Title = "Index";
+}
+@{ 
+    Layout = "~/Views/Shared/_LayoutOuKonMange3.cshtml";
+}
+@section styles{
+    <link type="text/css" rel="stylesheet" href="~/Content/styleOuKonMange3.css" />
+}
+    <h2>Liste des restos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Resto</th>
+                <th>Téléphone</th>
+                <th>Email</th>
+                <th>Modifier</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var resto in Model)
+            {
+                <tr>
+                    <td>@resto.Nom</td>
+                    <td>@resto.Telephone</td>
+                    <td>@resto.Email</td>
+                    <td>@Html.ActionLink("Modifier", "ModifierRestaurant", new { id = resto.Id })</td>
+                </tr>
+            }
+        </tbody>
+    </table>    

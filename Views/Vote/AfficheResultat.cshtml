@@ -1,0 +1,39 @@
+﻿@model List<OuKonMange3.Models.Resultat>
+@{
+    ViewBag.Title = "AfficheResultat";
+}
+@{
+    Layout = "~/Views/Shared/_LayoutOuKonMange3.cshtml";
+}
+
+@section styles{
+    <link type="text/css" rel="stylesheet" href="~/Content/styleOuKonMange3.css" />
+}
+
+@section bonjour{
+    <h3>Les scores...</h3>
+}
+
+<div id="tableauResultat">
+    <!--appel ajax-->
+</div>
+
+@*@Ajax.ActionLink("Actualiser le résultat", "AfficheTableau", new { id = ViewBag.Id }, new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "tableauResultat",
+        HttpMethod = "GET",
+        OnFailure = "ErreurAfficheTableau"})*@
+
+<p>Vue normale : @DateTime.Now.ToLongTimeString()</p>
+
+@section imageContent{
+    <img src="~/Content/imageResultat.jpg" alt="imageResultat" />
+}
+@section scripts{
+    <script type="text/javascript" src="../../Scripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script type="text/javascript" src="~/Scripts/afficheTableau.js"></script>
+
+    @*<script type="text/javascript" src="~/Scripts/erreurAfficheTableau.js"></script>*@
+}  

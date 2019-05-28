@@ -1,0 +1,32 @@
+﻿@model OuKonMange3.Models.RechercheViewModel
+@{
+    ViewBag.Title = "ResultatRecherche";
+}
+
+@if (Model.ListeRestos.Count == 0)
+{
+    <p>Aucun résultat pour votre recherche</p>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Resto</th>
+                <th>Téléphone</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var resto in Model.ListeRestos)
+            {
+                <tr>
+                    <td>@resto.Nom</td>
+                    <td>@resto.Telephone</td>
+                    <td>@resto.Email</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<p>@DateTime.Now.ToLongTimeString()</p>

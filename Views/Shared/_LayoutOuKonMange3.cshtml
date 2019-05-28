@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />   
+    <title>@ViewBag.Title</title>    
+    @RenderSection("styles", required: false)    
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="blocHeader">
+                <div class="logo">
+                    <img src="~/Content/geants.jpg" alt="geants" />
+                </div>
+                <div class="titre">
+                    <h1>OUKONMANGE</h1>
+                </div>
+            </div>
+            <div class="blocConnexionNav">
+                <div class="connexion">
+                    @if (!HttpContext.Current.User.Identity.IsAuthenticated)
+                    {
+                        <div class="boutonConnexion">
+                            @Html.ActionLink("Se connecter", "Index", "Login")
+                        </div>
+                        <div class="boutonCreerCompte">
+                            @Html.ActionLink("Créer un compte", "CreerCompte", "Login")
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="deconnexion">
+                            @Html.ActionLink("Se déconnecter", "Deconnexion", "Login")
+                        </div>
+                    }
+                </div>
+                <div class="nav">
+                    <div class="liensNav">
+                        <div class="lienNav">
+                            @Html.ActionLink("Accueil", "Index", "Home")
+                        </div>
+                        <div class="lienNav">
+                            @Html.ActionLink("Nouveau restaurant", "CreerRestaurant", "Restaurant")
+                        </div>
+                        <div class="lienNav">
+                            @Html.ActionLink("Modifier un restaurant", "Index", "Restaurant")
+                        </div>
+                        <div class="lienNav">
+                            @Html.ActionLink("Rechercher", "Recherche", "Restaurant")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="section">
+                <div class="afficheListe">@Html.Action("AfficheListeRestaurant", "Home")</div>
+            </div> 
+            <div class="mainContent">
+                <div class="blocContent">
+                    <div class="bonjour">
+                        @RenderSection("bonjour", required: false)
+                    </div>
+                    <div class="content">
+                        @RenderBody()
+                    </div>
+                    <div class="imageContent">
+                        @RenderSection("imageContent", required: false)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; @DateTime.Now.Year - OUKONMANGEVENDREDI????</p>
+        </div>
+    </div>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
